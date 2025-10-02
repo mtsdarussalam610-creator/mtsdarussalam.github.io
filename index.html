@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website resmi MTS Darussalam - Sekolah unggulan dengan pendidikan berkualitas dan fasilitas modern">
+    <meta name="keywords" content="sekolah, MTS, pendidikan, belajar, prestasi">
+    <meta name="author" content="MTS Darussalam">
+    <title>MTS Darussalam - Sekolah Unggulan</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #4285f4;
+            --accent-color: #fbbc05;
+            --text-color: #333;
+            --light-text: #666;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .school-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(aset/img/Foto\ Gedung\ 1.jpeg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Profile Section */
+        .profile {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+        
+        .profile-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .profile-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-card h3 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .profile-card p {
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+        
+        /* News Section */
+        .news {
+            padding: 80px 0;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .news-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .news-excerpt {
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+        
+        .news-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .news-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .news-link i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+        
+        .news-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-icon {
+            color: var(--white);
+            font-size: 2rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .contact-text p {
+            color: var(--light-text);
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .school-name {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                height: 90vh;
+            }
+            
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-container">
+                <div class="logo-container">
+                    <div class="logo"><img src="aset/img/LOGO MTS.jpg" alt="logo"widht="50px"height="50px"></div>
+                    <div class="school-name">MTS Darussalam</div>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#profile">Profil</a></li>
+                    <li><a href="#news">Berita</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Selamat Datang di MTS Darussalam</h1>
+            <p>Mencetak generasi berilmu, beriman, dan berakhlakul karimah untuk masa depan Indonesia yang lebih baik</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Daftar Sekarang</a>
+                <a href="#contact" class="btn btn-secondary">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile" id="profile">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Profil Sekolah</h2>
+            <div class="profile-content">
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-eye"></i> Visi</h3>
+                    <p>Mewujudkan generasi yang beriman, berilmu, berakhlakul karimah, dan berdaya saing dalam kehidupan global.</p>
+                </div>
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-bullseye"></i> Misi</h3>
+                    <p>1. Menanamkan nilai-nilai keimanan dan ketaqwaan kepada Allah SWT melalui pembelajaran agama dan pembiasaan ibadah..<br>
+                    2. Menyelenggarakan pendidikan berkualitas yang mengintegrasikan ilmu pengetahuan umum dan agama Islam.<br>
+                    3. Membentuk karakter siswa yang berakhlakul karimah, disiplin, bertanggung jawab, dan cinta tanah air.<br>
+                    4. Meningkatkan profesionalisme pendidik dan tenaga kependidikan dalam memberikan layanan pendidikan.<br>
+                    5. Menyediakan lingkungan belajar yang aman, bersih, dan mendukung pembelajaran aktif dan kreatif.<br>
+                    6. Mendorong pengembangan potensi siswa dalam bidang akademik, seni, olahraga, dan keterampilan hidup.<br>
+                    7. Membangun kerja sama dengan orang tua, masyarakat, dan instansi terkait untuk menunjang mutu pendidikan.</p>
+                </div>
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="fas fa-history"></i> Sejarah</h3>
+                    <p>Madrasah Tsanawiyah (MTs.) Darussalam didirikan pada tanggal 1 Januari 1970 di Dusun Randuharjo, Kecamatan Pungging, Kabupaten Mojokerto, Jawa Timur. Lembaga ini berada di bawah naungan Kementerian Agama dan berstatus sebagai sekolah swasta. Pendirian MTs. Darussalam merupakan wujud dari kepedulian masyarakat setempat terhadap pentingnya pendidikan Islam yang terintegrasi dengan ilmu pengetahuan umum bagi generasi muda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news" id="news">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Berita &amp; Pengumuman</h2>
+            <div class="news-grid">
+                <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="aset/img/Rafi .jpg" alt="Berita 1" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">05 Juli 2025</div>
+                        <h3 class="news-title">Prestasi Gemilang Siswa di Olimpiade Bahasa Arab (OBA) ke-8 Nasional</h3>
+                        <p class="news-excerpt">Tim olimpiade bahasa arab MTS Darussalam berhasil meraih 1 medali emas dan 1 medali perak dan 2 medali perunggu dalam ajang Olimpiade Bahasa Arab (OBA) ke-8 Tahun 2025.</p>
+                        <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="aset/img/Foto Gedung 1.jpeg" alt="Berita 2" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">10 Juni 2025</div>
+                        <h3 class="news-title">Pendaftaran Siswa Baru Tahun Ajaran 2025/2026 Dibuka</h3>
+                        <p class="news-excerpt">Pendaftaran siswa baru untuk tahun ajaran 2025/2026 telah dibuka. Dapatkan potongan biaya pendaftaran untuk pendaftaran awal.</p>
+                        <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="aset/img/Keg 3.jpg" alt="Berita 3" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">5 Juni 2025</div>
+                        <h3 class="news-title">Kegiatan Rutin Pmbacaan Rotib dan Sholat Dhuha</h3>
+                        <p class="news-excerpt">MTS Darussalam melaksanakan kegiatan rutin pagi berupa pembacaan rotib dan sholat dhuha untuk mencetak siswa yang religius.</p>
+                        <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Galeri Kegiatan</h2>
+            <div class="gallery-container">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="aset/img/Keg 1.jpg" alt="Kegiatan 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="aset/img/Keg 2.jpg" alt="Kegiatan 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="aset/img/Keg 3.jpg" alt="Kegiatan 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="aset/img/Keg 4.jpg" alt="Kegiatan 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="aset/img/Keg 5.jpg" alt="Kegiatan 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="aset/img/Keg 6.jpg" alt="Kegiatan 6">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Kontak &amp; Lokasi</h2>
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Alamat</h4>
+                            <p>Jl. Masjid Randurancang Ds.Randuharjo Kec.Pungging Kab.Mojokerto Jaawa Timur </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telepon</h4>
+                            <p>(+62) 813-5715-2048</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>info@mtsdarussalam610@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Jumat: 08:00 - 13.00<br>Sabtu: 08:00 - 12:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container" data-aos="fade-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d699.1985580296653!2d112.58770367003922!3d-7.546126506712971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1759377416544!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>MTS Darussalam</h3>
+                    <p>Mencetak generasi berilmu, beriman, dan berakhlakul karimah untuk masa depan Indonesia yang lebih baik</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#profile">Profil</a></li>
+                        <li><a href="#news">Berita</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Pendaftaran Siswa Baru</a></li>
+                        <li><a href="#">Kalender Akademik</a></li>
+                        <li><a href="#">Pengumuman</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Alumni</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:02112345678">(+62) 813-5715-2048</a></li>
+                        <li><a href="mailto:info@smanusantarajaya.sch.id">info@mtsdarussalam610@gmail.com</a></li>
+                        <li><a href="#">Jl. Masjid Randurancang Ds.Randuharjo Kec.Pungging Kab.Mojokerto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 MTS Darussalam . Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Animate hamburger menu
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '5px 0';
+            } else {
+                header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '15px 0';
+            }
+        });
+        
+        // Gallery lightbox (simple implementation)
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                
+                // Create lightbox elements
+                const lightbox = document.createElement('div');
+                lightbox.className = 'lightbox';
+                lightbox.style.position = 'fixed';
+                lightbox.style.top = '0';
+                lightbox.style.left = '0';
+                lightbox.style.width = '100%';
+                lightbox.style.height = '100%';
+                lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                lightbox.style.display = 'flex';
+                lightbox.style.alignItems = 'center';
+                lightbox.style.justifyContent = 'center';
+                lightbox.style.zIndex = '2000';
+                lightbox.style.cursor = 'pointer';
+                
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '90%';
+                img.style.borderRadius = '10px';
+                
+                lightbox.appendChild(img);
+                document.body.appendChild(lightbox);
+                
+                // Close lightbox on click
+                lightbox.addEventListener('click', () => {
+                    document.body.removeChild(lightbox);
+                });
+            });
+        });
+        
+        // Form submission (for contact form, if added in the future)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.textContent = 'Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.';
+                successMessage.style.position = 'fixed';
+                successMessage.style.top = '20px';
+                successMessage.style.left = '50%';
+                successMessage.style.transform = 'translateX(-50%)';
+                successMessage.style.backgroundColor = '#4CAF50';
+                successMessage.style.color = 'white';
+                successMessage.style.padding = '15px 30px';
+                successMessage.style.borderRadius = '5px';
+                successMessage.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+                successMessage.style.zIndex = '3000';
+                
+                document.body.appendChild(successMessage);
+                
+                // Remove message after 3 seconds
+                setTimeout(() => {
+                    document.body.removeChild(successMessage);
+                }, 3000);
+                
+                // Reset form
+                form.reset();
+            });
+        });
+    </script>
+
+</body></html>
